@@ -6,7 +6,7 @@ var app = express();
 var httpServer = require("http").createServer(app);
 var five = require("johnny-five");
 var raspi = require("raspi-io");
-var io=require('socket.io')(httpServer);
+var io = require('socket.io')(httpServer);
 
 var port = 3000;
 
@@ -20,7 +20,7 @@ httpServer.listen(port);
 console.log('Server available at http://localhost:' + port);
 var led;
 
-//Arduino board connection
+//RPi board connection
 
 var board = new five.Board({
   io: new raspi()

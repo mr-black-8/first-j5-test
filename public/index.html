@@ -1,43 +1,19 @@
-
-
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CODETutorial Mean seed</title>
+  <title>WildBerryBot - Command Centre</title>
 </head>
 <body>
   <script src="lib/socket.io-client/socket.io.js"></script>
-  <script src="lib/angularjs/angular.js"></script>
-  <script src="lib/angular-socket-io/socket.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="assets/main.js"></script>
 
-    <h1>{{"Led controller"}}</h1>
-  <div ng-controller="ArduController">
-    <button ng-click="ledOn()">On</button>
-    <button ng-click="ledOff()">Off</button>
+    <h1>LED Switch</h1>
+  <div class="container">
+    <button id="on">On</button>
+    <button id="off">Off</button>
   </div>
 
-<script type="text/javascript">
-    var app = angular.module('myApp', ['btford.socket-io']).
-    factory('mySocket', function (socketFactory) {
-        return socketFactory();
-    }).
-    controller('ArduController', function ($scope,mySocket) {
-
-        $scope.ledOn = function () {
-
-            mySocket.emit('led:on');
-            console.log('LED ON');
-        };
-
-
-        $scope.ledOff = function () {
-
-            mySocket.emit('led:off');
-            console.log('LED OFF');
-        };
-});
-
-</script>
 </body>
+</html>
